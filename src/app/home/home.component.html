@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="video-card" *ngFor="let item of data">
+        <a [routerLink]="['/innerpage']" [queryParams]="{ id: item.id}">
+            <img [src]="item.thumbnail" alt="" class="img-responsive">
+
+            <figure fxLayout="row" fxLayout.xs="row" fxLayoutAlign="start" >
+                <div fxFlex="9" fxFlex.xs="24">
+                   <div class="circle-image"></div>
+                </div>
+                <div fxFlex="88" fxFlex.xs="63">
+                   <h3>{{item.title}}</h3>
+                   <p>{{item.description}} {{item.views}}  {{item.date}}</p>
+                </div> 
+    
+                <div fxFlex="2" fxFlex.xs="9">
+                    <button mat-icon-button>
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
+                 </div>
+            </figure>
+        </a>
+    </div>
+</div>
